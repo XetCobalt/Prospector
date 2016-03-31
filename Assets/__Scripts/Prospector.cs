@@ -40,7 +40,7 @@ public class Prospector : MonoBehaviour {
 
 	CardProspector Draw(){
 		CardProspector cd = drawPile [0];
-		drawPile.RemoveAt[0];
+		drawPile.RemoveAt(0);
 		return(cd);
 	}
 
