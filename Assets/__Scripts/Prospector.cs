@@ -64,6 +64,8 @@ public class Prospector : MonoBehaviour {
 			cp.slotdef = tSD; //SOMETHING MAY GO WRONG HERE BECAUSE BOOK ERROR(?)
 			cp.state = CardState.tableau;
 
+			cp.SetSortingLayerName (tSD.layerName);
+
 			tableau.Add (cp);
 		}
 	}
@@ -77,5 +79,19 @@ public class Prospector : MonoBehaviour {
 		}
 		return lCP;
 	}
+
+	public void CardClicked(CardProspector cd){
+		switch (cd.state) {
+		case CardState.target:
+			break;
+		case CardState.drawpile:
+			MoveToDiscard(target);
+			MoveToTarget(Draw());
+			UpdateDrawPile();
+			break;
+		case CardState.tableau:
+			break;
+      	}
+  	}
 
 }
